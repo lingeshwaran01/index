@@ -1,21 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<html>
 <body>
-    
-</body>
+
+
+
+
+<p id="demo"></p>
+
 <script>
-    var latitude=0;
-    var longitude=0;
-navigator.geolocation.getCurrentPosition(pos=>{
-latitude=pos.coords.latitude
-longitude=pos.coords.longitude
-console.log(latitude,longitude)
-alert("l")
+window.onload=()=>{
+    getLocation()
+}
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } 
+}
+var la;
+var lo;
+function showPosition(position) {
+ 
+  this.la=position.coords.latitude;
+  this.lo=position.coords.longitude;
+  console.log(la,lo)
+
+}
 </script>
+
+</body>
 </html>
+
